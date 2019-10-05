@@ -1,0 +1,51 @@
+version: '3'
+services:
+
+  #PHP Service
+  app:
+    build:
+      context: .
+      dockerfile: php/Dockerfile
+    image: php:7.3-fpm
+    container_name: evacfl-php
+    restart: 'no'
+    tty: true
+    ports:
+      - "9000:9000"
+    environment:
+      SERVICE_NAME: evacfl-php
+      SERVICE_TAGS: dev
+    working_dir: /var/www
+    volumes:
+      - evacfl-var-www:/var/www:nocopy
+      - ./php/local.ini:/usr/local/etc/php/conf.d/local.ini
+    networks:
+      - evacfl-network
+
+  #Nginx Service
+  webserver:
+    build:
+      context: .
+      dockerfile: nginx/Dockerfile
+    image: nginx:alpine
+    container_name: evacfl-nginx
+    restart: 'no'
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - evacfl-var-www:/var/www:nocopy
+      - ./nginx/conf.d/:/etc/nginx/conf.d/
+    networks:
+      - evacfl-network
+
+#Docker Networks
+networks:
+  evacfl-network:
+    driver: bridge
+
+#Volumes
+volumes:
+  evacfl-var-www:
+    external: true
