@@ -19,15 +19,9 @@
         {% block stylesheets %}{% endblock %}
     </head>
     <body>
-        {% block header %}
-            <header class="header"></header>
-        {% endblock %}
-        <div class="main-content">
+        <div class="flex-wrapper">
             {% block body %}{% endblock %}
         </div>
-        {% block footer %}
-            <footer class="footer"></footer>
-        {% endblock %}
         {{ encore_entry_script_tags('app') }}
         {% block javascripts %}{% endblock %}
     </body>
