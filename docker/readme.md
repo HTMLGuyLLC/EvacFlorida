@@ -1,4 +1,4 @@
-#Installation
+# Installation
 1. Install Docker for Windows/Mac
 2. Run `docker-sync-stack start`<br>
 !Don't run compose-up!
@@ -6,12 +6,12 @@
 4. Run `mkdir /var/www/var && chmod 0777 /var/www/var -R`
 5. Visit `http://evac.localhost` in your browser
 
-#Connect to the PHP container:
+# Connect to the PHP container:
 ```
 docker exec -it evacfl-php bash
 ```
 
-#To clear all:
+# To clear all:
 ```
 #stop everything
 docker stop $(docker ps -aq)
