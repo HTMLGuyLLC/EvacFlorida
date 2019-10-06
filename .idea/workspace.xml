@@ -2,20 +2,36 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec91c63-c8b6-4caf-bff5-f05e83dbbfe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/auth/config.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/template/nav.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/facebook-app.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/img/facebook-app.psd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/components/loading.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/components/privateRoute.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/pages/profile.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/sass/components/_loader.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/loader.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Departures.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Highways.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Hurricanes.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191006004531.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191006004720.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191006005557.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Migrations/Version20191006010214.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/DeparturesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/HighwaysRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/HurricanesRepository.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Repository/UsersRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/img/logo.psd" beforeDir="false" afterPath="$PROJECT_DIR$/assets/img/logo.psd" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/template/footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/template/footer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/template/header.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/template/header.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/template/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/template/nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/pages/_homepage.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/auth/auth0.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/sass/template/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/template/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/template/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/template/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/templates/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/templates/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/For Prod.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/For Prod.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/readme.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Controller/pages/HomepageController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/pages/ReactController.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

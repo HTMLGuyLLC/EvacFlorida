@@ -1,25 +1,26 @@
 import '../sass/app.scss';
 import React from 'react';
 import ReactDOM from 'react-dom';
-
 import {Auth0Provider} from "./auth/auth0";
 import config from "./auth/config.json";
+import Header from "./template/header";
+import Footer from "./template/footer";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
+import Profile from "./pages/profile";
+import Homepage from "./pages/homepage";
 
 import axios from "axios";
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
+import PrivateRoute from "./components/privateRoute";
 const theme = createMuiTheme({
     palette: {
-        primary: { main: '#3b9e1a' }, // Purple and green play nicely together.
-        secondary: { main: '#11cb5f' }, // This is just green.A700 as hex.
+        primary: { main: '#3b9e1a' },
+        secondary: { main: '#333' },
     },
 });
-
-import Header from "./template/header";
-import Footer from "./template/footer";
-import PageContent from "./pages/homepage";
 
 const onRedirectCallback = appState => {
     window.history.replaceState(
@@ -43,7 +44,16 @@ ReactDOM.render(
                 <Header />
             </header>
             <div className="main-content">
-                <PageContent />
+                <BrowserRouter>
+                    <Switch>
+                        <Route path="/" exact>
+                            <Homepage />
+                        </Route>
+                        <PrivateRoute path="/profile">
+                            <Profile />
+                        </PrivateRoute>
+                    </Switch>
+                </BrowserRouter>
             </div>
             <footer className="footer">
                 <Footer />

@@ -4,12 +4,12 @@ namespace App\Controller\pages;
 use Symfony\Component\Routing\Annotation\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController as Controller;
 
-class HomepageController extends Controller
+class ReactController extends Controller
 {
     /**
-     * @Route("/", name="homepage")
+     * @Route("/{reactRouting}", name="index", defaults={"reactRouting": null})
      */
-    public function homepage()
+    public function reactAction()
     {
         return $this->render('pages/homepage.html.twig');
     }
