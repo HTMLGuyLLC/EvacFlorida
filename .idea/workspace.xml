@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec91c63-c8b6-4caf-bff5-f05e83dbbfe6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/components/_print-checklist.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/components/_print-checklist.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/evacChecklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/evacChecklist.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />

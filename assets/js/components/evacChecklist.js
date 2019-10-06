@@ -24,7 +24,7 @@ export default function EvacChecklist(){
     const items = [
         //basics
         'Wallet/Cash',
-        '/IDs/Passport',
+        'IDs/Passport',
         'Prescriptions',
         'Clothes/Shoes',
         'Jewelery',
