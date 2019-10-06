@@ -9,7 +9,7 @@ import SampleData from '../sample-data/chart';
 import Button from "@material-ui/core/Button";
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
-import {ShareLinks} from "../components/share-links";
+import {ShareLinks} from "../components/shareLinks";
 import EvacChecklist from "../components/evacChecklist";
 
 const border = '2px solid #f3f3f3';

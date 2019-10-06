@@ -101,7 +101,7 @@ export default function EvacChecklist(){
                 <Grid item xs={12} sm={8} md={6}>
                     <h2>Leaving? Are you Prepared?</h2>
                     <p>
-                        Things to bring with you when you evacuate:
+                        Things to do/bring with you when you evacuate:
                     </p>
                 </Grid>
                 <Grid item xs={12} sm={4} md={6}>
