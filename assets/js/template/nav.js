@@ -8,7 +8,8 @@ import Loading from "../components/loading";
 
 const useStyles = makeStyles({
     root: {
-        textAlign: 'right'
+        textAlign: 'right',
+        marginTop: '2em',
     },
     button: {
         marginLeft: '.25rem'

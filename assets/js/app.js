@@ -8,20 +8,23 @@ import Footer from "./template/footer";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import Profile from "./pages/profile";
 import Homepage from "./pages/homepage";
-
-import axios from "axios";
-axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
-
 import { ThemeProvider } from '@material-ui/styles';
 import { createMuiTheme } from '@material-ui/core/styles';
 import PrivateRoute from "./components/privateRoute";
+import axios from "axios";
+
+//add headers to axios requests so Symfony knows it's an XHR request
+axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+
+//set our theme's primary and secondary colors
 const theme = createMuiTheme({
     palette: {
-        primary: { main: '#3b9e1a' },
-        secondary: { main: '#333' },
+        primary: { main: '#3b9e1a' }, //green
+        secondary: { main: '#333' }, //dark gray
     },
 });
 
+//on Auth0 redirect, handle with JS
 const onRedirectCallback = appState => {
     window.history.replaceState(
         {},
@@ -32,6 +35,7 @@ const onRedirectCallback = appState => {
     );
 };
 
+//render our site
 ReactDOM.render(
     <ThemeProvider theme={theme}>
         <Auth0Provider
