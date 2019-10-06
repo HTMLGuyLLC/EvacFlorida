@@ -10,7 +10,8 @@ Hurricane evacuation planning service.
 4. install composer, run `composer install`
 5. install node/npm/yarn, run `yarn install`
 6. Start the webpack file watcher, run `yarn encore dev --watch`
-7. Start coding!
+7. Connect to the PHP container, run `php bin/console doctrine:migrations:migrate`
+8. Start coding!
 
 # To deploy:
 1. Pull the latest from Github
