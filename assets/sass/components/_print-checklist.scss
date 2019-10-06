@@ -12,6 +12,8 @@
     display: none !important;
   }
   .checklistItemPrint{
+    max-width: 33% !important;
+    flex-basis: 33% !important;
     width: 33% !important;
   }
 }
