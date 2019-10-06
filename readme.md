@@ -1,7 +1,7 @@
 # EvacFlorida.com
 Hurricane evacuation planning service.
 
-Built for Palm Beach Tech's 2019 Hackathon
+> Built for Palm Beach Tech's 2019 Hackathon
 
 # To setup locally:
 1. Clone this repository
