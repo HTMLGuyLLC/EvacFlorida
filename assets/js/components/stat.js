@@ -4,7 +4,9 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 const useStyles = makeStyles(theme => ({
     stat: {
         display: 'inline-block',
-        margin: '0 2em 3em 0'
+        margin: '0 1em 0 0',
+        borderRight: '1px solid #f3f3f3',
+        paddingRight: '1em',
     },
     label: {
         color: '#444',

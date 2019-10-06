@@ -9,6 +9,15 @@ img{
   max-width: 100%;
 }
 
+.field{
+  width: 250px;
+  max-width: 100%;
+}
+
+.hidden{
+  display: none !important;
+}
+
 .flex-wrapper{
   display: flex;
   flex-direction: column;

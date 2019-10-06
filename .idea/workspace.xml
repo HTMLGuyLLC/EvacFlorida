@@ -2,18 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec91c63-c8b6-4caf-bff5-f05e83dbbfe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/assets/js/components/departureForm.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/assets/js/components/stat.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Controller/api/HighwaysController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/components/highwayDropdown.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/sample-data/chart.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Controller/api/DeparturesController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/departureForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/departureForm.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/components/stat.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/stat.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/template/nav.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/template/nav.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/sass/template/_base.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/template/_base.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/sass/template/_footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/template/_footer.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/sass/template/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/assets/sass/template/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
