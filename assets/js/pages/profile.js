@@ -40,8 +40,16 @@ export default function Profile(){
                     <div>
                         <TextField
                             className={classes.field}
-                            label="Name"
-                            value={user.name}
+                            label="First Name"
+                            value={user.fname}
+                            margin="normal"
+                        />
+                    </div>
+                    <div>
+                        <TextField
+                            className={classes.field}
+                            label="Last Name"
+                            value={user.lname}
                             margin="normal"
                         />
                     </div>
@@ -63,6 +71,7 @@ export default function Profile(){
                         <FormControlLabel
                             control={
                                 <Checkbox
+                                    checked={user.spike_alert}
                                     inputProps={{
                                         'aria-label': 'primary checkbox',
                                     }}
@@ -78,6 +87,7 @@ export default function Profile(){
                         <FormControlLabel
                             control={
                                 <Checkbox
+                                    checked={user.reminder_alert}
                                     inputProps={{
                                         'aria-label': 'primary checkbox',
                                     }}

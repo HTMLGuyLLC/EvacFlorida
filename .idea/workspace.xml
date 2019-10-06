@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec91c63-c8b6-4caf-bff5-f05e83dbbfe6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Controller/api/UserController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/evacChecklist.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/evacChecklist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/share-links.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/shareLinks.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/homepage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/auth/auth0.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/auth/auth0.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/assets/js/pages/profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/profile.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -148,17 +148,17 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/icons" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/api" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/public/img/icons" />
       <recent name="$PROJECT_DIR$/src/Controller/api" />
+      <recent name="$PROJECT_DIR$/public/img/icons" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/assets/img" />
       <recent name="$PROJECT_DIR$" />

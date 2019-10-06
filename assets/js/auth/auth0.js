@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useContext } from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
+import axios from 'axios';
 
 const DEFAULT_REDIRECT_CALLBACK = () =>
     window.history.replaceState({}, document.title, window.location.pathname);
@@ -17,6 +18,15 @@ export const Auth0Provider = ({
     const [loading, setLoading] = useState(true);
     const [popupOpen, setPopupOpen] = useState(false);
 
+    const getOrCreateUser = async (user) => {
+        user.external_id = user.sub;
+        user.fname = user.given_name;
+        user.lname = user.family_name;
+        const res = await axios.post('/get-or-create-user', user);
+        user = {...user, ...res.data.user};
+        return user;
+    };
+
     useEffect(() => {
         const initAuth0 = async () => {
             const auth0FromHook = await createAuth0Client(initOptions);
@@ -32,7 +42,8 @@ export const Auth0Provider = ({
             setIsAuthenticated(isAuthenticated);
 
             if (isAuthenticated) {
-                const user = await auth0FromHook.getUser();
+                let user = await auth0FromHook.getUser();
+                user = await getOrCreateUser(user);
                 setUser(user);
             }
 
