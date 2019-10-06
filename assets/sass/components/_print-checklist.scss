@@ -1,0 +1,17 @@
+@media print{
+  .header, .footer{
+    display: none;
+  }
+  .flex-wrapper{
+    display: block;
+  }
+  .main-content{
+    display: block;
+  }
+  .noPrint{
+    display: none !important;
+  }
+  .checklistItemPrint{
+    width: 33% !important;
+  }
+}

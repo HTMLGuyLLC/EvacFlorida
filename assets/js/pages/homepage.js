@@ -5,13 +5,12 @@ import {Line} from "react-chartjs-2";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import Stat from "../components/stat";
 import DepartureForm from "../components/departureForm";
-import {Checkbox} from "@material-ui/core";
-import FormControlLabel from "@material-ui/core/FormControlLabel";
 import SampleData from '../sample-data/chart';
 import Button from "@material-ui/core/Button";
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
 import {ShareLinks} from "../components/share-links";
+import EvacChecklist from "../components/evacChecklist";
 
 const border = '2px solid #f3f3f3';
 
@@ -69,7 +68,9 @@ export default function Homepage() {
 
     return (
         <Container>
-            <Grid container>
+            <Grid
+                className="noPrint"
+                container>
                 <Grid item xs={9}>
                     <div className={classes.mainCol}>
                         <h1 className={classes.header}>Predicted Evacuation Traffic from Palm Beach County</h1>
@@ -84,18 +85,6 @@ export default function Homepage() {
                                 data={SampleData.data}
                                 options={SampleData.options}></Line>
                         </div>
-                    </div>
-                    <h2>Leaving? Are you Prepared?</h2>
-                    <p>
-                        Things to bring with you when you evacuate:
-                    </p>
-                    <div>
-                        <FormControlLabel
-                            control={
-                                <Checkbox />
-                            }
-                            label="Pets / Pet Food & Supplies"
-                        />
                     </div>
                 </Grid>
                 <Grid item xs={3}>
@@ -182,6 +171,7 @@ export default function Homepage() {
                     </div>
                 </Grid>
             </Grid>
+            <EvacChecklist />
         </Container>
     );
 }
