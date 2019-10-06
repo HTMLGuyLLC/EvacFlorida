@@ -27,15 +27,14 @@ More information about what should be improved/changed can be found in docs/Impr
 2. evac.localhost is hardcoded in several places
 3. Saving profile details doesn't work
 4. The homepage chart and stats do not pull from the departures table
-5. The alert system is not setup with emails
-6. Lack of code comments
-7. Lack of data validation
-8. Page titles/meta/canonical not handled for React pagination
-9. No unit tests
-10. @babel/plugin-proposal-class-properties can be removed from webpack.config.js and using yarn remove
+5. The alerts you enable in your profile are not setup
+6. Page titles/meta/canonical not handled for React pagination
+7. @babel/plugin-proposal-class-properties can be removed from webpack.config.js and using yarn remove
+8. No unit tests
 
 # Known inconsistencies:
-1. Use of SASS instead of CSS in the react files
-2. Use of <Fragment> wrapper in some places, and <div> or <span> in others
+1. Use of SASS instead of makeStyles for a couple minor things
+2. Use of Fragment wrapper in some places, and div or span in others
 3. Using aria attributes
-4. Formatting
+4. Data validation is spotty
+5. Code comments are spotty
