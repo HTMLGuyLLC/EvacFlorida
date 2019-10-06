@@ -11,6 +11,7 @@ import SampleData from '../sample-data/chart';
 import Button from "@material-ui/core/Button";
 import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
+import {ShareLinks} from "../components/share-links";
 
 const border = '2px solid #f3f3f3';
 
@@ -46,15 +47,15 @@ const useStyles = makeStyles(theme => ({
     },
     shareBtn: {
         marginLeft: '.5em'
+    },
+    shareImg: {
+        width: '30px',
+        marginRight: '.2em',
     }
 }));
 
 Chart.defaults.global.elements.point.borderColor = 'transparent';
 Chart.defaults.global.elements.point.radius = 0;
-
-const shareMsg = 'I used EvacFlorida to plan my trip around traffic, you should too! http://evac.localhost';
-const fbShareMsg = "https://www.facebook.com/dialog/feed?&app_id=432677524272813&link=http%3A%2F%2Fevac.localhost&display=popup&quote="+shareMsg+"&hashtag=#EvacuationPLanning";
-const ttShareMsg = "https://twitter.com/intent/tweet?url=http%3A%2F%2Fevac.localhost&via=EvacFlorida&text="+shareMsg+" #EvacuationPlanning";
 
 export default function Homepage() {
     const classes = useStyles();
@@ -64,16 +65,6 @@ export default function Homepage() {
 
     const changePlan = function(){
         setSubmitted(false);
-    };
-
-    const setShareMsg = (data) => {
-        if( data.date ){
-            let date = data.date.substr(0, 10);
-            let time = data.date.substr(-5);
-            handleShareMsg("mailto:?subject=Don't worry, I'll be ok!&body=I'm evacuating for the hurricane. My plan is to leave on " + date + ' at ' + time + '. '+shareMsg);
-        }else{
-            handleShareMsg('mailto?subject=I\'m not leave for the hurricane&body=I don\'t plan on leaving, how about you? Share your plans anonymously on http://evac.localhost.');
-        }
     };
 
     return (
@@ -112,7 +103,7 @@ export default function Homepage() {
                         <div className={classes.sidebar}>
                             { DepartureForm(function(data){
                                 setSubmitted(true);
-                                setShareMsg(data);
+                                ShareLinks.setShareMsg(data, handleShareMsg);
                             })}
                         </div>
                     </div>
@@ -153,19 +144,23 @@ export default function Homepage() {
                                             >
                                                 <div className={classes.shareWrapper}>
                                                     <Button
-                                                        href={fbShareMsg}
+                                                        href={ShareLinks.fbShareMsg}
                                                         target="_blank"
                                                         variant="contained"
                                                         color="secondary">
-                                                        Facebook
+                                                        <img className={classes.shareImg}
+                                                             src="/img/icons/fb-icon.png"
+                                                             alt="Email Icon" /> Facebook
                                                     </Button>
                                                     <Button
                                                         className={classes.shareBtn}
                                                         target="_blank"
-                                                        href={ttShareMsg}
+                                                        href={ShareLinks.ttShareMsg}
                                                         variant="contained"
                                                         color="secondary">
-                                                        Twitter
+                                                        <img className={classes.shareImg}
+                                                             src="/img/icons/twitter-icon.png"
+                                                             alt="Email Icon" /> Twitter
                                                     </Button>
                                                     <Button
                                                         className={classes.shareBtn}
@@ -173,7 +168,9 @@ export default function Homepage() {
                                                         target="_blank"
                                                         variant="contained"
                                                         color="secondary">
-                                                        Email
+                                                        <img className={classes.shareImg}
+                                                             src="/img/icons/email-icon.png"
+                                                             alt="Email Icon" /> Email
                                                     </Button>
                                                 </div>
                                             </Popover>

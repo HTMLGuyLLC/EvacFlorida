@@ -2,23 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4ec91c63-c8b6-4caf-bff5-f05e83dbbfe6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/config/packages/fos_rest.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Facades/ActiveHurricane.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/EvacFlorida.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/EvacFlorida.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/php.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/js/components/share-links.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/icons/email-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/icons/fb-icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/icons/twitter-icon.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/assets/js/components/departureForm.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/components/departureForm.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/assets/js/pages/homepage.js" beforeDir="false" afterPath="$PROJECT_DIR$/assets/js/pages/homepage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/composer.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config/bundles.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/bundles.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker/readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/docker/readme.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Controller/api/DeparturesController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Controller/api/DeparturesController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Departures.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Departures.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Users.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Users.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/symfony.lock" beforeDir="false" afterPath="$PROJECT_DIR$/symfony.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/For Prod.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/For Prod.md" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -161,7 +151,7 @@
     <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Controller/api" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/img/icons" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -170,6 +160,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/public/img/icons" />
       <recent name="$PROJECT_DIR$/src/Controller/api" />
       <recent name="$PROJECT_DIR$/public" />
       <recent name="$PROJECT_DIR$/assets/img" />
