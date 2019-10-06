@@ -80,6 +80,7 @@ class UserController extends Controller
             'external_id'=>$user->getExternalId(),
             'fname'=>$user->getFname() ?? '', //TextFields in JS hate null values
             'lname'=>$user->getLname() ?? '', //TextFields in JS hate null values
+            'email'=>$user->getEmail(),
             'reminder_alert'=>$user->getReminderAlertEnabled(),
             'spike_alert'=>$user->getTrafficSpikeAlertEnabled(),
         ];
