@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment, useState} from 'react';
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import {Line} from "react-chartjs-2";
@@ -8,6 +8,9 @@ import DepartureForm from "../components/departureForm";
 import {Checkbox} from "@material-ui/core";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import SampleData from '../sample-data/chart';
+import Button from "@material-ui/core/Button";
+import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import Popover from "@material-ui/core/Popover";
 
 const border = '2px solid #f3f3f3';
 
@@ -38,13 +41,40 @@ const useStyles = makeStyles(theme => ({
         background: '#f3f3f3',
         border: '1px solid #d2d2d2',
     },
+    shareWrapper: {
+        padding: '1em',
+    },
+    shareBtn: {
+        marginLeft: '.5em'
+    }
 }));
 
 Chart.defaults.global.elements.point.borderColor = 'transparent';
 Chart.defaults.global.elements.point.radius = 0;
 
+const shareMsg = 'I used EvacFlorida to plan my trip around traffic, you should too! http://evac.localhost';
+const fbShareMsg = "https://www.facebook.com/dialog/feed?&app_id=432677524272813&link=http%3A%2F%2Fevac.localhost&display=popup&quote="+shareMsg+"&hashtag=#EvacuationPLanning";
+const ttShareMsg = "https://twitter.com/intent/tweet?url=http%3A%2F%2Fevac.localhost&via=EvacFlorida&text="+shareMsg+" #EvacuationPlanning";
+
 export default function Homepage() {
     const classes = useStyles();
+
+    const [isSubmitted, setSubmitted] = useState(false);
+    const [shareMsg, handleShareMsg] = useState('');
+
+    const changePlan = function(){
+        setSubmitted(false);
+    };
+
+    const setShareMsg = (data) => {
+        if( data.date ){
+            let date = data.date.substr(0, 10);
+            let time = data.date.substr(-5);
+            handleShareMsg("mailto:?subject=Don't worry, I'll be ok!&body=I'm evacuating for the hurricane. My plan is to leave on " + date + ' at ' + time + '. '+shareMsg);
+        }else{
+            handleShareMsg('mailto?subject=I\'m not leave for the hurricane&body=I don\'t plan on leaving, how about you? Share your plans anonymously on http://evac.localhost.');
+        }
+    };
 
     return (
         <Container>
@@ -78,8 +108,80 @@ export default function Homepage() {
                     </div>
                 </Grid>
                 <Grid item xs={3}>
-                    <div className={classes.sidebar}>
-                        <DepartureForm />
+                    <div className={isSubmitted ? 'hidden': ''}>
+                        <div className={classes.sidebar}>
+                            { DepartureForm(function(data){
+                                setSubmitted(true);
+                                setShareMsg(data);
+                            })}
+                        </div>
+                    </div>
+                    <div className={isSubmitted ? '' : 'hidden'}>
+                        <h1>Success!</h1>
+                        <p>
+                            Thank you for contributing to make our service more useful for others!
+                        </p>
+                        <div>
+                            <Button
+                                onClick={changePlan}
+                                variant="contained"
+                                color="secondary">
+                                Edit
+                            </Button>
+                            <PopupState
+                                variant="popover">
+                                {
+                                    popupState => (
+                                        <Fragment>
+                                            <Button
+                                                className={classes.shareBtn}
+                                                variant="contained"
+                                                color="primary"
+                                                {...bindTrigger(popupState)}>
+                                                Share
+                                            </Button>
+                                            <Popover
+                                                {...bindPopover(popupState)}
+                                                anchorOrigin={{
+                                                    vertical: 'bottom',
+                                                    horizontal: 'center',
+                                                }}
+                                                transformOrigin={{
+                                                    vertical: 'top',
+                                                    horizontal: 'center',
+                                                }}
+                                            >
+                                                <div className={classes.shareWrapper}>
+                                                    <Button
+                                                        href={fbShareMsg}
+                                                        target="_blank"
+                                                        variant="contained"
+                                                        color="secondary">
+                                                        Facebook
+                                                    </Button>
+                                                    <Button
+                                                        className={classes.shareBtn}
+                                                        target="_blank"
+                                                        href={ttShareMsg}
+                                                        variant="contained"
+                                                        color="secondary">
+                                                        Twitter
+                                                    </Button>
+                                                    <Button
+                                                        className={classes.shareBtn}
+                                                        href={shareMsg}
+                                                        target="_blank"
+                                                        variant="contained"
+                                                        color="secondary">
+                                                        Email
+                                                    </Button>
+                                                </div>
+                                            </Popover>
+                                        </Fragment>
+                                    )
+                                }
+                            </PopupState>
+                        </div>
                     </div>
                 </Grid>
             </Grid>

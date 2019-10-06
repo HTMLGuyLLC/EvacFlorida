@@ -3,7 +3,7 @@
 2. Run `docker-sync-stack start`<br>
 !Don't run compose-up!
 3. Connect to the PHP container `docker exec -it evacfl-php bash`
-4. Run `mkdir /var/www/var && chmod 0777 /var/www/var -R`
+4. Run `mkdir /var/www/var && chmod 0777 /var/www/var -R && chmod 0777 /var/data.db`
 5. Visit `http://evac.localhost` in your browser
 
 # Connect to the PHP container:

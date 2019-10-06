@@ -8,6 +8,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import moment from "moment";
+import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -23,7 +24,7 @@ function round(date, duration, method) {
     return moment(Math[method]((+date) / (+duration)) * (+duration));
 }
 
-export default function DepartureForm(){
+export default function DepartureForm(onSuccess){
     const classes = useStyles();
 
     const [selectedDate, handleDateChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
@@ -44,10 +45,6 @@ export default function DepartureForm(){
         setEmail(val);
     };
 
-    const submitForm = event => {
-        event.target.closest('form').submit();
-    };
-
     const handleSubmit = event => {
         event.preventDefault();
 
@@ -58,17 +55,27 @@ export default function DepartureForm(){
 
         let [highway_id, dir] = highway.split('-');
 
-        axios.post('/departures', {
+        const data = {
             is_leaving: is_leaving,
             date: selectedDate.format("YYYY-MM-DD")+' '+selectedTime.format("HH:mm"),
             highway: highway_id,
             direction: dir,
             email: email
-        }).then(res => {
+        };
 
+        axios({
+            url: '/departures',
+            method: 'post',
+            data: data,
+        }).then(res => {
+            onSuccess(data);
         });
 
         return false;
+    };
+
+    const submitForm = event => {
+        handleSubmit(event);
     };
 
     return (

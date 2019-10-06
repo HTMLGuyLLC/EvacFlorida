@@ -41,12 +41,12 @@ class Users
     /**
      * @ORM\Column(type="boolean")
      */
-    private $traffic_spike_alert_enabled;
+    private $traffic_spike_alert_enabled = false;
 
     /**
      * @ORM\Column(type="boolean")
      */
-    private $reminder_alert_enabled;
+    private $reminder_alert_enabled = true;
 
     /**
      * @ORM\Column(type="datetime")

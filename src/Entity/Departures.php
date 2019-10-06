@@ -42,7 +42,7 @@ class Departures
     /**
      * @ORM\Column(type="integer")
      */
-    private $traffic_when_added;
+    private $traffic_when_added = 0;
 
     /**
      * @ORM\Column(type="datetime", nullable=true)
