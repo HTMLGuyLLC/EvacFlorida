@@ -1,28 +1,28 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
+<head>
+    <meta charset="UTF-8">
 
-        <title>{% block title %}EvacFlorida.com{% endblock %}</title>
+    <title>{% block title %}EvacFlorida.com{% endblock %}</title>
 
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
+    <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no"/>
 
-        <meta name="robots" content="noindex, nofollow">
+    <meta name="robots" content="noindex, nofollow">
 
-        <meta name="current_route" content="{{ app.request.get('_route') }}">
+    <meta name="current_route" content="{{ app.request.get('_route') }}">
 
-        <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico">
 
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-        {{ encore_entry_link_tags('app') }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"/>
+    {{ encore_entry_link_tags('app') }}
 
-        {% block stylesheets %}{% endblock %}
-    </head>
-    <body>
-        <div class="flex-wrapper">
-            {% block body %}{% endblock %}
-        </div>
-        {{ encore_entry_script_tags('app') }}
-        {% block javascripts %}{% endblock %}
-    </body>
+    {% block stylesheets %}{% endblock %}
+</head>
+<body>
+<div class="flex-wrapper">
+    {% block body %}{% endblock %}
+</div>
+{{ encore_entry_script_tags('app') }}
+{% block javascripts %}{% endblock %}
+</body>
 </html>

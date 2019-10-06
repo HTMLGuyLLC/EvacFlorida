@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\api;
 
 use App\Entity\Highways;
@@ -15,12 +16,12 @@ class HighwaysController extends Controller
         $em = $this->getDoctrine()->getManager();
         $highways = $em->getRepository(Highways::class)->findAll();
 
-        foreach($highways as $key=>$highway){
+        foreach ($highways as $key => $highway) {
             $highways[$key] = self::getData($highway);
         }
 
         return $this->json([
-            'highways'=>$highways
+            'highways' => $highways
         ]);
     }
 
@@ -28,11 +29,12 @@ class HighwaysController extends Controller
      * @param Highways $highway
      * @return array
      */
-    public static function getData(Highways $highway){
+    public static function getData(Highways $highway)
+    {
         return [
-            'id'=>$highway->getId(),
-            'name'=>$highway->getName(),
-            'directions'=>$highway->getDirections()
+            'id' => $highway->getId(),
+            'name' => $highway->getName(),
+            'directions' => $highway->getDirections()
         ];
     }
 }

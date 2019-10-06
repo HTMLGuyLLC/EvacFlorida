@@ -7,7 +7,7 @@ import Stat from "../components/stat";
 import DepartureForm from "../components/departureForm";
 import SampleData from '../sample-data/chart';
 import Button from "@material-ui/core/Button";
-import PopupState, { bindTrigger, bindPopover } from 'material-ui-popup-state';
+import PopupState, {bindTrigger, bindPopover} from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
 import {ShareLinks} from "../components/shareLinks";
 import EvacChecklist from "../components/evacChecklist";
@@ -16,11 +16,11 @@ const border = '2px solid #f3f3f3';
 
 const useStyles = makeStyles(theme => ({
     header: {
-      marginBottom: '.5em',
-      borderBottom: border,
-      paddingBottom: '.5em',
-      marginTop: 0,
-      marginRight: '1em',
+        marginBottom: '.5em',
+        borderBottom: border,
+        paddingBottom: '.5em',
+        marginTop: 0,
+        marginRight: '1em',
     },
     chart: {
         borderBottom: border,
@@ -31,9 +31,9 @@ const useStyles = makeStyles(theme => ({
         marginRight: '1em',
     },
     stats: {
-      marginBottom: '.5em',
-      paddingBottom: '.5em',
-      borderBottom: border,
+        marginBottom: '.5em',
+        paddingBottom: '.5em',
+        borderBottom: border,
     },
     sidebar: {
         padding: '.5em 2em',
@@ -62,7 +62,7 @@ export default function Homepage() {
     const [isSubmitted, setSubmitted] = useState(false);
     const [shareMsg, handleShareMsg] = useState('');
 
-    const changePlan = function(){
+    const changePlan = function () {
         setSubmitted(false);
     };
 
@@ -75,10 +75,10 @@ export default function Homepage() {
                     <div className={classes.mainCol}>
                         <h1 className={classes.header}>Predicted Evacuation Traffic from Palm Beach County</h1>
                         <div className={classes.stats}>
-                            { Stat('Palm Beach Pop.', '1.47 million', '') }
-                            { Stat('Respondents', '109,538', '7.45') }
-                            { Stat('Leaving', '86,000', '78.51') }
-                            { Stat('Staying', '23,538', '21.49') }
+                            {Stat('Palm Beach Pop.', '1.47 million', '')}
+                            {Stat('Respondents', '109,538', '7.45')}
+                            {Stat('Leaving', '86,000', '78.51')}
+                            {Stat('Staying', '23,538', '21.49')}
                         </div>
                         <div className={classes.chart}>
                             <Line
@@ -88,9 +88,9 @@ export default function Homepage() {
                     </div>
                 </Grid>
                 <Grid item xs={3}>
-                    <div className={isSubmitted ? 'hidden': ''}>
+                    <div className={isSubmitted ? 'hidden' : ''}>
                         <div className={classes.sidebar}>
-                            { DepartureForm(function(data){
+                            {DepartureForm(function (data) {
                                 setSubmitted(true);
                                 ShareLinks.setShareMsg(data, handleShareMsg);
                             })}
@@ -139,7 +139,7 @@ export default function Homepage() {
                                                         color="secondary">
                                                         <img className={classes.shareImg}
                                                              src="/img/icons/fb-icon.png"
-                                                             alt="Email Icon" /> Facebook
+                                                             alt="Email Icon"/> Facebook
                                                     </Button>
                                                     <Button
                                                         className={classes.shareBtn}
@@ -149,7 +149,7 @@ export default function Homepage() {
                                                         color="secondary">
                                                         <img className={classes.shareImg}
                                                              src="/img/icons/twitter-icon.png"
-                                                             alt="Email Icon" /> Twitter
+                                                             alt="Email Icon"/> Twitter
                                                     </Button>
                                                     <Button
                                                         className={classes.shareBtn}
@@ -159,7 +159,7 @@ export default function Homepage() {
                                                         color="secondary">
                                                         <img className={classes.shareImg}
                                                              src="/img/icons/email-icon.png"
-                                                             alt="Email Icon" /> Email
+                                                             alt="Email Icon"/> Email
                                                     </Button>
                                                 </div>
                                             </Popover>
@@ -171,7 +171,7 @@ export default function Homepage() {
                     </div>
                 </Grid>
             </Grid>
-            <EvacChecklist />
+            <EvacChecklist/>
         </Container>
     );
 }

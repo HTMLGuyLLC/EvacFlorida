@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { Route } from "react-router-dom";
+import React, {useEffect} from "react";
+import {Route} from "react-router-dom";
 import {useAuth0} from "../auth/auth0";
 
-const PrivateRoute = ({ component: Component, path, ...rest }) => {
-    const { loading, isAuthenticated, loginWithRedirect } = useAuth0();
+const PrivateRoute = ({component: Component, path, ...rest}) => {
+    const {loading, isAuthenticated, loginWithRedirect} = useAuth0();
 
     useEffect(() => {
         if (loading || isAuthenticated) {
@@ -11,7 +11,7 @@ const PrivateRoute = ({ component: Component, path, ...rest }) => {
         }
         const fn = async () => {
             await loginWithRedirect({
-                appState: { targetUrl: path }
+                appState: {targetUrl: path}
             });
         };
         fn();

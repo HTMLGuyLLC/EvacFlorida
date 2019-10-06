@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\api;
 
 use App\Entity\Highways;
@@ -30,28 +31,28 @@ class UserController extends Controller
         $email = $request->get('email');
 
         //require email
-        if( !$email || !mb_strlen(trim($email)) ){
+        if (!$email || !mb_strlen(trim($email))) {
             throw new BadRequestHttpException('Email is required', null, Response::HTTP_BAD_REQUEST);
         }
 
         $user = null;
 
         //prefer external id (email may have changed)
-        if( $external_id = $request->get('external_id') ){
+        if ($external_id = $request->get('external_id')) {
             $user = $em->getRepository(Users::class)->findOneBy([
-                'external_id'=>$external_id
+                'external_id' => $external_id
             ]);
         }
 
         //if user not found by external, try email
-        if( !$user ){
+        if (!$user) {
             $user = $em->getRepository(Users::class)->findOneBy([
-                'email'=>$email
+                'email' => $email
             ]);
         }
 
         //if no user, create one
-        if( !$user ){
+        if (!$user) {
             $user = new Users();
             $user->setExternalId($request->get('external_id'));
             $user->setFname($request->get('fname'));
@@ -66,7 +67,7 @@ class UserController extends Controller
         $em->flush();
 
         return $this->json([
-            'user'=>self::getData($user)
+            'user' => self::getData($user)
         ]);
     }
 
@@ -74,15 +75,16 @@ class UserController extends Controller
      * @param Users $user
      * @return array
      */
-    public static function getData(Users $user){
+    public static function getData(Users $user)
+    {
         return [
-            'id'=>$user->getId(),
-            'external_id'=>$user->getExternalId(),
-            'fname'=>$user->getFname() ?? '', //TextFields in JS hate null values
-            'lname'=>$user->getLname() ?? '', //TextFields in JS hate null values
-            'email'=>$user->getEmail(),
-            'reminder_alert'=>$user->getReminderAlertEnabled(),
-            'spike_alert'=>$user->getTrafficSpikeAlertEnabled(),
+            'id' => $user->getId(),
+            'external_id' => $user->getExternalId(),
+            'fname' => $user->getFname() ?? '', //TextFields in JS hate null values
+            'lname' => $user->getLname() ?? '', //TextFields in JS hate null values
+            'email' => $user->getEmail(),
+            'reminder_alert' => $user->getReminderAlertEnabled(),
+            'spike_alert' => $user->getTrafficSpikeAlertEnabled(),
         ];
     }
 }

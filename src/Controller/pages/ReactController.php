@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Controller\pages;
 
 use Symfony\Component\Routing\Annotation\Route;

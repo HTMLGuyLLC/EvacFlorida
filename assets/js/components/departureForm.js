@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import MomentUtils from '@date-io/moment';
 import {MuiPickersUtilsProvider, KeyboardDatePicker, KeyboardTimePicker} from "@material-ui/pickers";
 import {HighwayDropdown} from "./highwayDropdown";
@@ -12,7 +12,7 @@ import axios from "axios";
 
 const useStyles = makeStyles(theme => ({
     header: {
-      marginBottom: 0
+        marginBottom: 0
     },
     button: {
         marginTop: theme.spacing(2),
@@ -24,7 +24,7 @@ function round(date, duration, method) {
     return moment(Math[method]((+date) / (+duration)) * (+duration));
 }
 
-export default function DepartureForm(onSuccess){
+export default function DepartureForm(onSuccess) {
     const classes = useStyles();
 
     const [selectedDate, handleDateChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
@@ -49,7 +49,7 @@ export default function DepartureForm(onSuccess){
         event.preventDefault();
 
         /** @Todo: Validate submitted data */
-        if( is_leaving ){
+        if (is_leaving) {
             /** @Todo: Validate data related to leaving */
         }
 
@@ -57,7 +57,7 @@ export default function DepartureForm(onSuccess){
 
         const data = {
             is_leaving: is_leaving,
-            date: selectedDate.format("YYYY-MM-DD")+' '+selectedTime.format("HH:mm"),
+            date: selectedDate.format("YYYY-MM-DD") + ' ' + selectedTime.format("HH:mm"),
             highway: highway_id,
             direction: dir,
             email: email
@@ -94,7 +94,7 @@ export default function DepartureForm(onSuccess){
                         inputProps={{
                             name: 'is_leaving',
                         }}
-                        >
+                    >
                         <MenuItem key={0} value={false}>I'm planning on staying</MenuItem>
                         <MenuItem key={1} value={true}>I'm evacuting</MenuItem>
                     </TextField>
@@ -120,14 +120,14 @@ export default function DepartureForm(onSuccess){
                             label="Departure Time"
                             margin="normal"
                             value={selectedTime}
-                            views={['hours','minutes']}
+                            views={['hours', 'minutes']}
                             minutesStep={30}
                             onChange={handleTimeChange}
                             KeyboardButtonProps={{
                                 'aria-label': 'change time',
                             }}
-                            />
-                        <HighwayDropdown highway={highway} onChange={handleHighwayChange} />
+                        />
+                        <HighwayDropdown highway={highway} onChange={handleHighwayChange}/>
                     </Grid>
                     <Grid container
                           direction="column"
@@ -146,10 +146,10 @@ export default function DepartureForm(onSuccess){
                     </Grid>
                     <div>
                         <Button
-                                onClick={submitForm}
-                                className={classes.button}
-                                variant="contained"
-                                color="primary">Submit</Button>
+                            onClick={submitForm}
+                            className={classes.button}
+                            variant="contained"
+                            color="primary">Submit</Button>
                     </div>
                 </Grid>
             </form>

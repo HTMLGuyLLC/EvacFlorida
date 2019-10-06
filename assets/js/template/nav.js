@@ -1,6 +1,6 @@
 import React from "react";
 import {useAuth0} from '../auth/auth0';
-import { makeStyles } from '@material-ui/styles';
+import {makeStyles} from '@material-ui/styles';
 import Button from '@material-ui/core/Button';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -16,9 +16,9 @@ const useStyles = makeStyles({
     }
 });
 
-export default function Nav(){
+export default function Nav() {
     const classes = useStyles();
-    const { isAuthenticated, loginWithRedirect, loading, logout, user } = useAuth0();
+    const {isAuthenticated, loginWithRedirect, loading, logout, user} = useAuth0();
     const [anchorEl, setAnchorEl] = React.useState(null);
 
     const handleClick = event => {
@@ -47,15 +47,15 @@ export default function Nav(){
             )}
 
             {isAuthenticated &&
-                (
-                    <span>
+            (
+                <span>
                         <Button className={classes.button}
                                 variant="contained"
                                 color="primary"
                                 aria-controls="simple-menu"
                                 aria-haspopup="true"
                                 onClick={handleClick}>
-                            { (user.name.split(' '))[0] }
+                            {(user.name.split(' '))[0]}
                           </Button>
                           <Menu
                               id="simple-menu"
@@ -64,11 +64,11 @@ export default function Nav(){
                               open={Boolean(anchorEl)}
                               onClose={handleClose}
                           >
-                            <MenuItem onClick={() => window.location.href="/profile"}>Profile</MenuItem>
+                            <MenuItem onClick={() => window.location.href = "/profile"}>Profile</MenuItem>
                             <MenuItem onClick={() => logout()}>Logout</MenuItem>
                           </Menu>
                     </span>
-                )
+            )
             }
         </div>
     );

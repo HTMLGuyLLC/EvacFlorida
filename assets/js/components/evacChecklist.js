@@ -6,19 +6,18 @@ import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
-    item: {
-    },
+    item: {},
     printWrapper: {
         textAlign: 'right',
         marginTop: '.5em',
     }
 }));
 
-function printChecklist(){
+function printChecklist() {
     window.print();
 }
 
-export default function EvacChecklist(){
+export default function EvacChecklist() {
     const classes = useStyles();
 
     const items = [
@@ -78,7 +77,7 @@ export default function EvacChecklist(){
 
     const components = [];
 
-    items.forEach(function(item, index){
+    items.forEach(function (item, index) {
         components.push(
             <Grid item
                   className="checklistItemPrint"
@@ -87,7 +86,7 @@ export default function EvacChecklist(){
                 <FormControlLabel
                     className={classes.item}
                     control={
-                        <Checkbox />
+                        <Checkbox/>
                     }
                     label={item}
                 />

@@ -43,7 +43,8 @@ export class HighwayDropdown extends React.Component {
             >
                 {this.state.highways.map(highway => (
                     highway.directions.map(dir => (
-                        <MenuItem key={highway.id+'-'+dir} value={highway.id + '-' + dir}>{highway.name} - {dir}</MenuItem>
+                        <MenuItem key={highway.id + '-' + dir}
+                                  value={highway.id + '-' + dir}>{highway.name} - {dir}</MenuItem>
                     ))
                 ))}
             </TextField>

@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Facades;
 
 use App\Entity\Hurricanes;
@@ -19,12 +20,13 @@ class ActiveHurricane
      * @return Hurricanes|null
      * @throws \Doctrine\DBAL\DBALException
      */
-    public static function getActiveHurricane(EntityManagerInterface $em): ?Hurricanes{
+    public static function getActiveHurricane(EntityManagerInterface $em): ?Hurricanes
+    {
 
         //see if one exists
         $sql = "SELECT id FROM hurricanes WHERE start_date <= :now AND end_date >= :now";
         $hurricane_id = $em->getConnection()->fetchAssoc($sql, [
-            'now'=>(new \DateTime())->format("Y-m-d H:i:s")
+            'now' => (new \DateTime())->format("Y-m-d H:i:s")
         ]);
 
         //return the Hurricane object, or null
@@ -39,13 +41,14 @@ class ActiveHurricane
      * @return Hurricanes|false
      * @throws \Doctrine\DBAL\DBALException
      */
-    public static function getAndRequireHurricane(EntityManagerInterface $em, bool $throwException = true){
+    public static function getAndRequireHurricane(EntityManagerInterface $em, bool $throwException = true)
+    {
         //get active hurricane, if exists
         $hurricane = self::getActiveHurricane($em);
 
         //if not, throw exception or return false
-        if( !$hurricane ){
-            if( $throwException ){
+        if (!$hurricane) {
+            if ($throwException) {
                 throw new BadRequestHttpException('There is no active hurricane.', null, Response::HTTP_BAD_REQUEST);
             }
             return false;

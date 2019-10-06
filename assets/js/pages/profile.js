@@ -24,8 +24,8 @@ const useStyles = makeStyles(theme => ({
     }
 }));
 
-export default function Profile(){
-    const { loading, user } = useAuth0();
+export default function Profile() {
+    const {loading, user} = useAuth0();
     const classes = useStyles();
 
     if (loading || !user) {
@@ -75,12 +75,13 @@ export default function Profile(){
                                     inputProps={{
                                         'aria-label': 'primary checkbox',
                                     }}
-                                    value="1" />
+                                    value="1"/>
                             }
                             label="Warn me if my planned evac time grows significantly in popularity."
                         />
                         <p className={classes.lightText}>
-                            If enabled, we will send you an email 6 hours and 3 hours prior to your departure time if 25% more people indicate they plan on leaving at the same time.
+                            If enabled, we will send you an email 6 hours and 3 hours prior to your departure time if
+                            25% more people indicate they plan on leaving at the same time.
                         </p>
                     </div>
                     <div>
@@ -91,12 +92,13 @@ export default function Profile(){
                                     inputProps={{
                                         'aria-label': 'primary checkbox',
                                     }}
-                                    value="1" />
+                                    value="1"/>
                             }
                             label="Remind me periodically to update my evac time"
                         />
                         <p className={classes.lightText}>
-                            If enabled, we will send you an email every few hours to make sure you stil plan on leaving. Up until an hour prior to your departure.
+                            If enabled, we will send you an email every few hours to make sure you stil plan on leaving.
+                            Up until an hour prior to your departure.
                         </p>
                     </div>
                 </Grid>

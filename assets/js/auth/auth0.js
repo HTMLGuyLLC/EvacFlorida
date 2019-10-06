@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, {useState, useEffect, useContext} from "react";
 import createAuth0Client from "@auth0/auth0-spa-js";
 import axios from 'axios';
 
@@ -33,7 +33,7 @@ export const Auth0Provider = ({
             setAuth0(auth0FromHook);
 
             if (window.location.search.includes("code=")) {
-                const { appState } = await auth0FromHook.handleRedirectCallback();
+                const {appState} = await auth0FromHook.handleRedirectCallback();
                 onRedirectCallback(appState);
             }
 

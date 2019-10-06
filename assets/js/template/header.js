@@ -11,7 +11,7 @@ export default function Header(){
                     <img src="/logo.png" alt="EVACFlorida" />
                 </Grid>
                 <Grid item xs={6}>
-                    <Nav />
+                    <Nav/>
                 </Grid>
             </Grid>
         </Container>
