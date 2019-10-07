@@ -42,7 +42,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: '1em',
     },
     sidebar: {
-        padding: '.5em 2em',
+        padding: '2em',
         marginTop: '2em',
         background: '#f3f3f3',
         border: '1px solid #d2d2d2',
@@ -114,76 +114,78 @@ export default function Homepage() {
                         </div>
                     </div>
                     <div className={isSubmitted ? '' : 'hidden'}>
-                        <Typography variant="h1">Success!</Typography>
-                        <Typography>
-                            Thank you for contributing to make our service more useful for others!
-                        </Typography>
-                        <div>
-                            <Button
-                                onClick={changePlan}
-                                variant="contained"
-                                color="secondary">
-                                Edit
-                            </Button>
-                            <PopupState
-                                variant="popover">
-                                {
-                                    popupState => (
-                                        <Fragment>
-                                            <Button
-                                                className={classes.shareBtn}
-                                                variant="contained"
-                                                color="primary"
-                                                {...bindTrigger(popupState)}>
-                                                Share
-                                            </Button>
-                                            <Popover
-                                                {...bindPopover(popupState)}
-                                                anchorOrigin={{
-                                                    vertical: 'bottom',
-                                                    horizontal: 'center',
-                                                }}
-                                                transformOrigin={{
-                                                    vertical: 'top',
-                                                    horizontal: 'center',
-                                                }}
-                                            >
-                                                <div className={classes.shareWrapper}>
-                                                    <Button
-                                                        href={ShareLinks.fbShareMsg}
-                                                        target="_blank"
-                                                        variant="contained"
-                                                        color="secondary">
-                                                        <img className={classes.shareImg}
-                                                             src="/img/icons/fb-icon.png"
-                                                             alt="Email Icon"/> Facebook
-                                                    </Button>
-                                                    <Button
-                                                        className={classes.shareBtn}
-                                                        target="_blank"
-                                                        href={ShareLinks.ttShareMsg}
-                                                        variant="contained"
-                                                        color="secondary">
-                                                        <img className={classes.shareImg}
-                                                             src="/img/icons/twitter-icon.png"
-                                                             alt="Email Icon"/> Twitter
-                                                    </Button>
-                                                    <Button
-                                                        className={classes.shareBtn}
-                                                        href={shareMsg}
-                                                        target="_blank"
-                                                        variant="contained"
-                                                        color="secondary">
-                                                        <img className={classes.shareImg}
-                                                             src="/img/icons/email-icon.png"
-                                                             alt="Email Icon"/> Email
-                                                    </Button>
-                                                </div>
-                                            </Popover>
-                                        </Fragment>
-                                    )
-                                }
-                            </PopupState>
+                        <div className={classes.sidebar}>
+                            <h1>Success!</h1>
+                            <p>
+                                Thank you for contributing to make our service more useful for others!
+                            </p>
+                            <div>
+                                <Button
+                                    onClick={changePlan}
+                                    variant="contained"
+                                    color="secondary">
+                                    Edit
+                                </Button>
+                                <PopupState
+                                    variant="popover">
+                                    {
+                                        popupState => (
+                                            <Fragment>
+                                                <Button
+                                                    className={classes.shareBtn}
+                                                    variant="contained"
+                                                    color="primary"
+                                                    {...bindTrigger(popupState)}>
+                                                    Share
+                                                </Button>
+                                                <Popover
+                                                    {...bindPopover(popupState)}
+                                                    anchorOrigin={{
+                                                        vertical: 'bottom',
+                                                        horizontal: 'center',
+                                                    }}
+                                                    transformOrigin={{
+                                                        vertical: 'top',
+                                                        horizontal: 'center',
+                                                    }}
+                                                >
+                                                    <div className={classes.shareWrapper}>
+                                                        <Button
+                                                            href={ShareLinks.fbShareMsg}
+                                                            target="_blank"
+                                                            variant="contained"
+                                                            color="secondary">
+                                                            <img className={classes.shareImg}
+                                                                 src="/img/icons/fb-icon.png"
+                                                                 alt="Email Icon"/> Facebook
+                                                        </Button>
+                                                        <Button
+                                                            className={classes.shareBtn}
+                                                            target="_blank"
+                                                            href={ShareLinks.ttShareMsg}
+                                                            variant="contained"
+                                                            color="secondary">
+                                                            <img className={classes.shareImg}
+                                                                 src="/img/icons/twitter-icon.png"
+                                                                 alt="Email Icon"/> Twitter
+                                                        </Button>
+                                                        <Button
+                                                            className={classes.shareBtn}
+                                                            href={shareMsg}
+                                                            target="_blank"
+                                                            variant="contained"
+                                                            color="secondary">
+                                                            <img className={classes.shareImg}
+                                                                 src="/img/icons/email-icon.png"
+                                                                 alt="Email Icon"/> Email
+                                                        </Button>
+                                                    </div>
+                                                </Popover>
+                                            </Fragment>
+                                        )
+                                    }
+                                </PopupState>
+                            </div>
                         </div>
                     </div>
                 </Grid>
