@@ -1,6 +1,6 @@
 const shareMsg = 'I used EvacFlorida to plan my trip around traffic, you should too! https://evacflorida.com';
 
-const domain = 'https://evacflorida.com';
+const domain = window.origin;
 
 export const ShareLinks = {
     shareMsg: shareMsg,
