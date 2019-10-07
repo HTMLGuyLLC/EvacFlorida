@@ -34,6 +34,7 @@ export class HighwayDropdown extends React.Component {
             <TextField
                 select
                 required
+                margin="normal"
                 value={this.state.highway}
                 onChange={this.handleChange}
                 label="Highway"
