@@ -25,7 +25,6 @@ const useStyles = makeStyles(theme => ({
     chart: {
         borderBottom: border,
         paddingBottom: '2em',
-        marginBottom: '2em',
     },
     mainCol: {
         marginRight: '1em',
@@ -40,6 +39,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: '2em',
         background: '#f3f3f3',
         border: '1px solid #d2d2d2',
+        marginBottom: '2em',
     },
     shareWrapper: {
         padding: '1em',
@@ -71,7 +71,7 @@ export default function Homepage() {
             <Grid
                 className="noPrint"
                 container>
-                <Grid item xs={9}>
+                <Grid item xs={12} md={8} lg={9}>
                     <div className={classes.mainCol}>
                         <h1 className={classes.header}>Predicted Evacuation Traffic from Palm Beach County</h1>
                         <div className={classes.stats}>
@@ -87,7 +87,7 @@ export default function Homepage() {
                         </div>
                     </div>
                 </Grid>
-                <Grid item xs={3}>
+                <Grid item xs={12} md={4} lg={3}>
                     <div className={isSubmitted ? 'hidden' : ''}>
                         <div className={classes.sidebar}>
                             {DepartureForm(function (data) {
