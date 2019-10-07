@@ -55,14 +55,18 @@ class DeparturesController extends Controller
         foreach ($required as $req) {
             //nothing should be 0, so we can just verify again truthy values and strlen with trim
             if (!$request->get($req) || !mb_strlen(trim($request->get($req)))) {
-                throw new BadRequestHttpException($fields[$req] . ' is required.', null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>$fields[$req] . ' is required.',
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
         }
 
         //validate email format
         $email = $request->get('email');
         if (filter_var($email, FILTER_VALIDATE_EMAIL) === false) {
-            throw new BadRequestHttpException('Please enter a valid email address.', null, Response::HTTP_BAD_REQUEST);
+            return $this->json([
+                'msg'=>'Please enter a valid email address.',
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         //get user, if exists, by email
@@ -106,15 +110,21 @@ class DeparturesController extends Controller
             try {
                 $date = new \DateTime($request->get('date'));
             } catch (\Throwable $t) {
-                throw new BadRequestHttpException('Invalid date format', null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>'Invalid date format',
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
 
             //validate that the departure date is between the hurricane dates
             if ($date < $hurricane->getStartDate()) {
-                throw new BadRequestHttpException('Please choose a departure date after ' . $hurricane->getStartDate()->format("m/d g:ia"), null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>'Please choose a departure date after ' . $hurricane->getStartDate()->format("m/d g:ia"),
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
             if ($date > $hurricane->getEndDate()) {
-                throw new BadRequestHttpException('Please choose a departure date before ' . $hurricane->getEndDate()->format("m/d g:ia"), null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>'Please choose a departure date before ' . $hurricane->getEndDate()->format("m/d g:ia"),
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
 
             $departure->setDate($date);
@@ -125,13 +135,17 @@ class DeparturesController extends Controller
 
             //if highway wasn't found...they probably tampered with the POST
             if (!$highway) {
-                throw new BadRequestHttpException('Invalid highway', null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>'Invalid highway',
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
 
             //validate the direction they are traveling on the highway (should never be incorrect unless tampered with)
             $direction = $request->get('direction');
             if (!in_array($direction, ['N', 'S', 'E', 'W']) || !in_array($direction, $highway->getDirections())) {
-                throw new BadRequestHttpException('Invalid direction', null, Response::HTTP_BAD_REQUEST);
+                return $this->json([
+                    'msg'=>'Invalid direction',
+                ], Response::HTTP_UNPROCESSABLE_ENTITY);
             }
 
             $departure->setHighway($highway);
