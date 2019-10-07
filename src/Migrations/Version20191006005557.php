@@ -21,7 +21,7 @@ final class Version20191006005557 extends AbstractMigration
     {
         $this->addSql("INSERT INTO `Hurricanes` (name, start_date, end_date, noaa_link, date_added) 
         VALUES 
-        ('Dorian', '2019-10-05', '2019-10-07', :url, :now)", [
+        ('Dorian', '2019-01-01', '2025-01-01', :url, :now)", [
             'url'=>'https://www.nhc.noaa.gov/archive/2019/DORIAN_graphics.php?product=5day_cone_no_line_and_wind',
             'now'=>date("Y-m-d H:i:s")
         ]);
