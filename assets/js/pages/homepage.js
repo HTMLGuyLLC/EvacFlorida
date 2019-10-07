@@ -76,6 +76,8 @@ export default function Homepage() {
         setSubmitted(false);
     };
 
+    document.title = 'Plan your Evacuation around Traffic | EvacFlorida';
+
     return (
         <Container>
             <Grid

@@ -42,6 +42,8 @@ export default function Profile() {
         return Loading();
     }
 
+    document.title = 'Profile | EvacFlorida';
+
     return (
         <Container>
             <Grid container>
