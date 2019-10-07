@@ -5,10 +5,7 @@ import Button from '@material-ui/core/Button';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Loading from "../components/loading";
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import Homepage from "../pages/homepage";
-import PrivateRoute from "../components/privateRoute";
-import Profile from "../pages/profile";
+import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({
     root: {
