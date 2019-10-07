@@ -32,17 +32,13 @@ function round(date, duration, method) {
 
 export default function DepartureForm(onSuccess) {
     const classes = useStyles();
-    const {isAuthenticated, loading, user} = useAuth0();
-
-    if (isAuthenticated && (loading || !user)) {
-        return Loading();
-    }
+    const {isAuthenticated, user} = useAuth0();
 
     const [selectedDate, handleDateChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
     const [selectedTime, handleTimeChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
     const [is_leaving, setIsLeaving] = useState(true);
     const [highway, setHighway] = useState('2-N');
-    const [email, setEmail] = useState(isAuthenticated ? user.email : ' ');
+    const [email, setEmail] = useState(isAuthenticated && user ? user.email : ' ');
 
     const handleLeavingChange = event => {
         setIsLeaving(event.target.value);
