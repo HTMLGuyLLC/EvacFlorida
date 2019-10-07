@@ -30,7 +30,7 @@ class Departures
 
     /**
      * @ORM\ManyToOne(targetEntity="App\Entity\Highways", inversedBy="departures")
-     * @ORM\JoinColumn(nullable=false)
+     * @ORM\JoinColumn(nullable=true)
      */
     private $highway;
 
