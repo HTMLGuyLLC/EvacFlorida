@@ -50,12 +50,14 @@ ReactDOM.render(
                 </header>
                 <div className="main-content">
                     <div className="page-content">
-                        <Route path="/" exact>
-                            <Homepage />
-                        </Route>
-                        <PrivateRoute path="/profile">
-                            <Profile />
-                        </PrivateRoute>
+                        <Switch>
+                            <Route path="/" exact>
+                                <Homepage />
+                            </Route>
+                            <PrivateRoute path="/profile">
+                                <Profile />
+                            </PrivateRoute>
+                        </Switch>
                     </div>
                     <footer className="footer">
                         <Footer />

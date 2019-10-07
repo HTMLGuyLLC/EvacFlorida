@@ -101,7 +101,7 @@ export default function EvacChecklist() {
     });
 
     return (
-        <div class={classes.wrapper}>
+        <div className={classes.wrapper}>
             <Grid container>
                 <Grid item xs={12} sm={8} md={6}>
                     <h2>Leaving? Are you Prepared?</h2>
