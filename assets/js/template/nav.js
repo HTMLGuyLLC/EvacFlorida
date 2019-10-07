@@ -5,6 +5,10 @@ import Button from '@material-ui/core/Button';
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Loading from "../components/loading";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import Homepage from "../pages/homepage";
+import PrivateRoute from "../components/privateRoute";
+import Profile from "../pages/profile";
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -40,7 +44,7 @@ export default function Nav() {
 
     return (
         <div className={classes.root}>
-            <Button className={classes.button} variant="contained" color="secondary" href="/">Home</Button>
+            <Button component={Link} to="/" className={classes.button} variant="contained" color="secondary">Home</Button>
             {!isAuthenticated && (
                 <Button className={classes.button} variant="contained" color="primary"
                         onClick={() =>
@@ -69,7 +73,7 @@ export default function Nav() {
                               open={Boolean(anchorEl)}
                               onClose={handleClose}
                           >
-                            <MenuItem onClick={() => window.location.href = "/profile"}>Profile</MenuItem>
+                            <MenuItem component={Link} to="/profile" onClick={handleClose}>Profile</MenuItem>
                             <MenuItem onClick={() => logout()}>Logout</MenuItem>
                           </Menu>
                     </span>

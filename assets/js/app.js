@@ -44,24 +44,24 @@ ReactDOM.render(
             redirect_uri={window.location.origin}
             onRedirectCallback={onRedirectCallback}
         >
-            <header className="header">
-                <Header />
-            </header>
-            <div className="main-content">
-                <BrowserRouter>
-                    <Switch>
+            <BrowserRouter>
+                <header className="header">
+                    <Header />
+                </header>
+                <div className="main-content">
+                    <div className="page-content">
                         <Route path="/" exact>
                             <Homepage />
                         </Route>
                         <PrivateRoute path="/profile">
                             <Profile />
                         </PrivateRoute>
-                    </Switch>
-                </BrowserRouter>
-            </div>
-            <footer className="footer">
-                <Footer />
-            </footer>
+                    </div>
+                    <footer className="footer">
+                        <Footer />
+                    </footer>
+                </div>
+            </BrowserRouter>
         </Auth0Provider>
     </ThemeProvider>,
     document.querySelector('.flex-wrapper')

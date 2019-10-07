@@ -76,7 +76,7 @@ export default function Profile() {
                             color="primary">Save</Button>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <h1 class={classes.alertsHeader}>Alerts</h1>
+                    <h1 className={classes.alertsHeader}>Alerts</h1>
                     <div>
                         <FormControlLabel
                             control={
