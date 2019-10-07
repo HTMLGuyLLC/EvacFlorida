@@ -48,6 +48,9 @@ const useStyles = makeStyles(theme => ({
         border: '1px solid #d2d2d2',
         marginBottom: '2em',
     },
+    successHeader: {
+        marginTop: 0,
+    },
     shareWrapper: {
         padding: '1em',
     },
@@ -115,7 +118,7 @@ export default function Homepage() {
                     </div>
                     <div className={isSubmitted ? '' : 'hidden'}>
                         <div className={classes.sidebar}>
-                            <h1>Success!</h1>
+                            <h1 className={classes.successHeader}>Success!</h1>
                             <p>
                                 Thank you for contributing to make our service more useful for others!
                             </p>
