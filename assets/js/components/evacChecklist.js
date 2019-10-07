@@ -7,9 +7,12 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles(theme => ({
     item: {},
+    wrapper: {
+      marginTop: '1em',
+    },
     printWrapper: {
         textAlign: 'right',
-        marginTop: '.5em',
+        marginTop: '1em',
         [theme.breakpoints.down('xs')]: {
             display: 'none',
         },
@@ -98,7 +101,7 @@ export default function EvacChecklist() {
     });
 
     return (
-        <Fragment>
+        <div class={classes.wrapper}>
             <Grid container>
                 <Grid item xs={12} sm={8} md={6}>
                     <h2>Leaving? Are you Prepared?</h2>
@@ -121,6 +124,6 @@ export default function EvacChecklist() {
             <Grid container>
                 {components}
             </Grid>
-        </Fragment>
+        </div>
     );
 };
