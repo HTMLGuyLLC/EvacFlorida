@@ -9,6 +9,8 @@ import Button from "@material-ui/core/Button";
 import makeStyles from "@material-ui/core/styles/makeStyles";
 import moment from "moment";
 import axios from "axios";
+import {useAuth0} from "../auth/auth0";
+import Loading from "./loading";
 
 const useStyles = makeStyles(theme => ({
     header: {
@@ -26,12 +28,17 @@ function round(date, duration, method) {
 
 export default function DepartureForm(onSuccess) {
     const classes = useStyles();
+    const {isAuthenticated, loading, user} = useAuth0();
+
+    if (isAuthenticated && (loading || !user)) {
+        return Loading();
+    }
 
     const [selectedDate, handleDateChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
     const [selectedTime, handleTimeChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
     const [is_leaving, setIsLeaving] = useState(true);
     const [highway, setHighway] = useState('2-N');
-    const [email, setEmail] = useState('');
+    const [email, setEmail] = useState(isAuthenticated ? user.email : ' ');
 
     const handleLeavingChange = event => {
         setIsLeaving(event.target.value);
@@ -42,7 +49,7 @@ export default function DepartureForm(onSuccess) {
     };
 
     const handleSetEmail = val => {
-        setEmail(val);
+        setEmail(val.currentTarget.value);
     };
 
     const handleSubmit = event => {
