@@ -11,6 +11,7 @@ import PopupState, {bindTrigger, bindPopover} from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
 import {ShareLinks} from "../components/shareLinks";
 import EvacChecklist from "../components/evacChecklist";
+import {Typography} from "@material-ui/core";
 
 const border = '2px solid #f3f3f3';
 
@@ -20,7 +21,6 @@ const useStyles = makeStyles(theme => ({
         borderBottom: border,
         paddingBottom: '.5em',
         marginTop: 0,
-        marginRight: '1em',
     },
     chart: {
         borderBottom: border,
@@ -33,6 +33,9 @@ const useStyles = makeStyles(theme => ({
         marginBottom: '.5em',
         paddingBottom: '.5em',
         borderBottom: border,
+    },
+    stat: {
+        marginBottom: '1em',
     },
     sidebar: {
         padding: '.5em 2em',
@@ -75,10 +78,20 @@ export default function Homepage() {
                     <div className={classes.mainCol}>
                         <h1 className={classes.header}>Predicted Evacuation Traffic from Palm Beach County</h1>
                         <div className={classes.stats}>
-                            {Stat('Palm Beach Pop.', '1.47 million', '')}
-                            {Stat('Respondents', '109,538', '7.45')}
-                            {Stat('Leaving', '86,000', '78.51')}
-                            {Stat('Staying', '23,538', '21.49')}
+                            <Grid container>
+                                <Grid item xs={6} sm={3} md={3} className={classes.stat}>
+                                    {Stat('Palm Beach Pop.', '1.47 million', '')}
+                                </Grid>
+                                <Grid item xs={6} sm={3} md={3} className={classes.stat}>
+                                    {Stat('Respondents', '109,538', '7.45')}
+                                </Grid>
+                                <Grid item xs={6} sm={3} md={3} className={classes.stat}>
+                                    {Stat('Leaving', '86,000', '78.51')}
+                                </Grid>
+                                <Grid item xs={6} sm={3} md={3} className={classes.stat}>
+                                    {Stat('Staying', '23,538', '21.49')}
+                                </Grid>
+                            </Grid>
                         </div>
                         <div className={classes.chart}>
                             <Line
@@ -97,10 +110,10 @@ export default function Homepage() {
                         </div>
                     </div>
                     <div className={isSubmitted ? '' : 'hidden'}>
-                        <h1>Success!</h1>
-                        <p>
+                        <Typography variant="h1">Success!</Typography>
+                        <Typography>
                             Thank you for contributing to make our service more useful for others!
-                        </p>
+                        </Typography>
                         <div>
                             <Button
                                 onClick={changePlan}
