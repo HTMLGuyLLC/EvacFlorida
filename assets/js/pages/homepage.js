@@ -17,17 +17,21 @@ const border = '2px solid #f3f3f3';
 
 const useStyles = makeStyles(theme => ({
     header: {
-        marginBottom: '.5em',
         borderBottom: border,
         paddingBottom: '.5em',
         marginTop: 0,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1.5em'
+        },
     },
     chart: {
         borderBottom: border,
         paddingBottom: '2em',
     },
     mainCol: {
-        marginRight: '1em',
+        [theme.breakpoints.up('md')]: {
+            marginRight: '1em'
+        },
     },
     stats: {
         marginBottom: '.5em',

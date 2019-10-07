@@ -7,10 +7,10 @@ export default function Header(){
     return (
         <Container>
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <img src="/logo.png" alt="EVACFlorida" />
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <Nav/>
                 </Grid>
             </Grid>

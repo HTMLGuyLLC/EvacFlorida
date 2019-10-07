@@ -6,15 +6,20 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import Loading from "../components/loading";
 
-const useStyles = makeStyles({
+const useStyles = makeStyles(theme => ({
     root: {
         textAlign: 'right',
         marginTop: '2em',
+        [theme.breakpoints.down('xs')]: {
+            marginBottom: '.5em',
+            marginTop: '.5em',
+            textAlign: 'center',
+        },
     },
     button: {
         marginLeft: '.25rem'
-    }
-});
+    },
+}));
 
 export default function Nav() {
     const classes = useStyles();

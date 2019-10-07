@@ -10,7 +10,10 @@ const useStyles = makeStyles(theme => ({
     printWrapper: {
         textAlign: 'right',
         marginTop: '.5em',
-    }
+        [theme.breakpoints.down('xs')]: {
+            display: 'none',
+        },
+    },
 }));
 
 function printChecklist() {

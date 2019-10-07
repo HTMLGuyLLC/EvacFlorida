@@ -14,7 +14,11 @@ import Loading from "./loading";
 
 const useStyles = makeStyles(theme => ({
     header: {
-        marginBottom: 0
+        marginBottom: 0,
+        [theme.breakpoints.down('xs')]: {
+            fontSize: '1.3em',
+            marginBottom: '.5em',
+        },
     },
     button: {
         marginTop: theme.spacing(2),
