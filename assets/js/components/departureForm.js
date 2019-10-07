@@ -31,7 +31,7 @@ export default function DepartureForm(onSuccess) {
     const [selectedTime, handleTimeChange] = useState(round(new Date(), moment.duration(30, "minutes"), 'ceil'));
     const [is_leaving, setIsLeaving] = useState(true);
     const [highway, setHighway] = useState('2-N');
-    const [email, setEmail] = useState('shane@htmlguy.com');
+    const [email, setEmail] = useState('');
 
     const handleLeavingChange = event => {
         setIsLeaving(event.target.value);
