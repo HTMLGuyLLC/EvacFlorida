@@ -21,6 +21,16 @@ const useStyles = makeStyles(theme => ({
         color: '#6f6f6f',
         fontSize: '.8em',
         marginBottom: '1.5em',
+    },
+    profileHeader: {
+        [theme.breakpoints.down('xs')]: {
+            marginTop: 0,
+        },
+    },
+    alertsHeader: {
+        [theme.breakpoints.down('xs')]: {
+            marginTop: '1em',
+        },
     }
 }));
 
@@ -36,7 +46,7 @@ export default function Profile() {
         <Container>
             <Grid container>
                 <Grid item xs={12} sm={6}>
-                    <h1>Profile</h1>
+                    <h1 className={classes.profileHeader}>Profile</h1>
                     <div>
                         <TextField
                             className={classes.field}
@@ -66,7 +76,7 @@ export default function Profile() {
                             color="primary">Save</Button>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                    <h1>Alerts</h1>
+                    <h1 class={classes.alertsHeader}>Alerts</h1>
                     <div>
                         <FormControlLabel
                             control={
