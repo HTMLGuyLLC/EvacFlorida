@@ -35,7 +35,7 @@ export default function Profile() {
     return (
         <Container>
             <Grid container>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <h1>Profile</h1>
                     <div>
                         <TextField
@@ -65,7 +65,7 @@ export default function Profile() {
                             variant="contained"
                             color="primary">Save</Button>
                 </Grid>
-                <Grid item xs={6}>
+                <Grid item xs={12} sm={6}>
                     <h1>Alerts</h1>
                     <div>
                         <FormControlLabel
