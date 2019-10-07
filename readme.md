@@ -24,13 +24,12 @@ More information about what should be improved/changed can be found in docs/Impr
 
 # Known issues:
 1. Logout doesn't redirect correctly
-2. evac.localhost is hardcoded in several places
-3. Saving profile details doesn't work
-4. The homepage chart and stats do not pull from the departures table
-5. The alerts you enable in your profile are not setup
-6. Page titles/meta/canonical not handled for React pagination
-7. @babel/plugin-proposal-class-properties can be removed from webpack.config.js and using yarn remove
-8. No unit tests
+2. Saving profile details doesn't work
+3. The homepage chart and stats do not pull from the departures table
+4. The alerts you enable in your profile are not setup
+5. Page titles/meta/canonical not handled for React pagination
+6. @babel/plugin-proposal-class-properties can be removed from webpack.config.js and using yarn remove
+7. No unit tests
 
 # Known inconsistencies:
 1. Use of SASS instead of makeStyles for a couple minor things
