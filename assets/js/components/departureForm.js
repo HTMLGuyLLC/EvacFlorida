@@ -10,7 +10,6 @@ import makeStyles from "@material-ui/core/styles/makeStyles";
 import moment from "moment";
 import axios from "axios";
 import {useAuth0} from "../auth/auth0";
-import Loading from "./loading";
 
 const useStyles = makeStyles(theme => ({
     header: {

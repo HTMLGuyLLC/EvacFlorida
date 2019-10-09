@@ -3,8 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Hurricanes;
+use DateTime;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Common\Persistence\ManagerRegistry;
+use Doctrine\DBAL\DBALException;
+use Doctrine\ORM\EntityManagerInterface;
 
 /**
  * @method Hurricanes|null find($id, $lockMode = null, $lockVersion = null)
@@ -17,6 +20,29 @@ class HurricanesRepository extends ServiceEntityRepository
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, Hurricanes::class);
+    }
+
+    /**
+     * Grabs the active hurricane, if exists
+     *
+     * @return Hurricanes|null
+     * @throws DBALException
+     * @throws \Doctrine\ORM\ORMException
+     * @throws \Doctrine\ORM\OptimisticLockException
+     * @throws \Doctrine\ORM\TransactionRequiredException
+     */
+    public function getActive(): ?Hurricanes
+    {
+        $em = $this->getEntityManager();
+
+        //see if one exists
+        $sql = "SELECT id FROM hurricanes WHERE start_date <= :now AND end_date >= :now";
+        $hurricane_id = $em->getConnection()->fetchAssoc($sql, [
+            'now' => (new DateTime())->format("Y-m-d H:i:s")
+        ]);
+
+        //return the Hurricane object, or null
+        return $hurricane_id ? $em->find(Hurricanes::class, $hurricane_id) : null;
     }
 
     // /**

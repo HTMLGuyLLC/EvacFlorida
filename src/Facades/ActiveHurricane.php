@@ -14,26 +14,6 @@ use Symfony\Component\HttpKernel\Exception\BadRequestHttpException;
 class ActiveHurricane
 {
     /**
-     * Grabs the active hurricane, if exists
-     *
-     * @param EntityManagerInterface $em
-     * @return Hurricanes|null
-     * @throws \Doctrine\DBAL\DBALException
-     */
-    public static function getActiveHurricane(EntityManagerInterface $em): ?Hurricanes
-    {
-
-        //see if one exists
-        $sql = "SELECT id FROM hurricanes WHERE start_date <= :now AND end_date >= :now";
-        $hurricane_id = $em->getConnection()->fetchAssoc($sql, [
-            'now' => (new \DateTime())->format("Y-m-d H:i:s")
-        ]);
-
-        //return the Hurricane object, or null
-        return $hurricane_id ? $em->find(Hurricanes::class, $hurricane_id) : null;
-    }
-
-    /**
      * Requires an active hurricane to exist or throws an exception (to be used in controllers)
      *
      * @param EntityManagerInterface $em
@@ -44,7 +24,7 @@ class ActiveHurricane
     public static function getAndRequireHurricane(EntityManagerInterface $em, bool $throwException = true)
     {
         //get active hurricane, if exists
-        $hurricane = self::getActiveHurricane($em);
+        $hurricane = $em->getRepository(Hurricanes::class)->getActive();
 
         //if not, throw exception or return false
         if (!$hurricane) {

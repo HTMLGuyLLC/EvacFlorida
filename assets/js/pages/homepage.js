@@ -11,7 +11,6 @@ import PopupState, {bindTrigger, bindPopover} from 'material-ui-popup-state';
 import Popover from "@material-ui/core/Popover";
 import {ShareLinks} from "../components/shareLinks";
 import EvacChecklist from "../components/evacChecklist";
-import {Typography} from "@material-ui/core";
 
 const border = '2px solid #f3f3f3';
 
