@@ -3,7 +3,6 @@ version: "2"
 options:
   verbose: true
 syncs:
-  evacfl-var-www: # tip: add -sync and you keep consistent names as a convention
+  evacfl-var-www:
     src: '../'
-    # sync_strategy: 'native_osx' # not needed, this is the default now
-    sync_excludes: ['.git', 'node_modules', 'notes', 'docs', 'tests', 'public-dev', 'docker', 'var', '.env.dist', '.env.test', '.gitignore', 'README.md', 'symfony.lock', 'composer.json', 'composer.lock', 'gulpfile', 'phpunit.xml.dist']
+    sync_excludes: ['.git', 'docs', 'tests', 'docker', 'var', '.env.dist', '.env.test', '.gitignore', 'README.md', 'symfony.lock', 'composer.json', 'composer.lock', 'gulpfile', 'phpunit.xml.dist']

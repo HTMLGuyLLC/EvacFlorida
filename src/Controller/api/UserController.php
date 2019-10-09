@@ -32,7 +32,9 @@ class UserController extends Controller
 
         //require email
         if (!$email || !mb_strlen(trim($email))) {
-            throw new BadRequestHttpException('Email is required', null, Response::HTTP_BAD_REQUEST);
+            return $this->json([
+                'msg'=>'Email is required',
+            ], Response::HTTP_UNPROCESSABLE_ENTITY);
         }
 
         $user = null;

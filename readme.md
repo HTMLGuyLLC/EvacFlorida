@@ -8,9 +8,9 @@ More information about what should be improved/changed can be found in docs/Impr
 
 # To setup locally:
 1. Clone this repository
+2. install composer, run `composer install`
+3. install node/npm/yarn, run `yarn install`
 2. Follow the instructions in `docker/readme.me`
-3. install composer, run `composer install`
-4. install node/npm/yarn, run `yarn install`
 5. Start the webpack file watcher, run `yarn encore dev --watch`
 6. Connect to the PHP container, run `php bin/console doctrine:migrations:migrate`
 7. Start coding!
