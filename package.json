@@ -26,7 +26,7 @@
         "chart.js": "^2.8.0",
         "date-fns": "^2.0.0-beta.5",
         "material-ui-popup-state": "^1.4.1",
-        "moment": "^2.24.0",
+        "moment": "^2.29.4",
         "react": "^16.10.2",
         "react-chartjs-2": "^2.8.0",
         "react-dom": "^16.10.2",
